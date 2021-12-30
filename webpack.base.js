@@ -1,14 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { VueLoaderPlugin } = require("vue-loader");
+
 module.exports = {
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".vue"],
     alias: {
       "@": path.resolve(__dirname, "src")
     }
   },
   entry: {
-    index: "./src/index.js"
+    main: "./src/main.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -26,14 +28,19 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         use: [{ loader: "file-loader" }]
+      },
+      {
+        test: /\.vue$/,
+        loader: "vue-loader"
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public/index.html"),
+      template: "./public/index.html",
       filename: "index.html",
-      chunks: ["index"]
-    })
+      chunks: ["main"]
+    }),
+    new VueLoaderPlugin()
   ]
 };
