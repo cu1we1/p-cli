@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { name } from "./index";
+console.log(name);
 export default {
   data() {
     return {
