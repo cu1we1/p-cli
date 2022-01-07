@@ -6,7 +6,12 @@ module.exports = {
   resolve: {
     extensions: [".js", ".ts", ".vue"],
     alias: {
-      "@": path.resolve(__dirname, "src")
+      "@": path.resolve(__dirname, "src"),
+      src: path.resolve(__dirname, "src"),
+      "@gs": path.resolve(__dirname, "src/packages"),
+      "@lego": path.resolve(__dirname, "src/lego/src"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@img": path.resolve(__dirname, "src/img")
     }
   },
   entry: {

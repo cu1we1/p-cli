@@ -37,8 +37,12 @@
   },
   "dependencies": {
     "@cpc/lib-sass-bem": "^1.0.0",
+    "@cpc/lib-search-jsapi": "^0.1.8",
     "@heytap/badjs-sourcemap-uploader": "^1.4.4",
+    "@oppo/colorui": "^2.0.22",
+    "@oppo/colorui-icon": "^1.0.0-beta",
     "core-js": "^3.20.1",
+    "dayjs": "^1.9.7",
     "sass-resources-loader": "^2.2.4",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3"

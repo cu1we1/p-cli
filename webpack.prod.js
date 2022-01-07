@@ -5,7 +5,6 @@ const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
-const TerserPlugin = require("terser-webpack-plugin");
 const base = require("./webpack.base");
 const fs = require("fs");
 
@@ -139,16 +138,5 @@ module.exports = merge(base, {
       filename: "zeus.html",
       chunks: ["zeus"]
     })
-  ],
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        minify: TerserPlugin.uglifyJsMinify,
-        terserOptions: {
-          drop_console: true
-        }
-      })
-    ]
-  }
+  ]
 });
