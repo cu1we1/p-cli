@@ -1,20 +1,20 @@
 <template>
   <div>
-    Home
-    <img :src="imgURL" alt="homeImg" />
+    {{ title }}
   </div>
 </template>
 
 <script>
-import img from "@/assets/img.png";
+import { name } from "./index";
+console.log(name);
 export default {
   data() {
     return {
-      imgURL: img,
+      title: "zeus",
     };
   },
 };
-</script>     
+</script>
 
 <style>
 </style>

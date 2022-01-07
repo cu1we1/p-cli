@@ -10,7 +10,8 @@ module.exports = {
     }
   },
   entry: {
-    main: "./src/main.js"
+    medusa: "./src/pages/medusa/main.js",
+    zeus: "./src/pages/zeus/main.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -43,9 +44,16 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      filename: "index.html",
-      chunks: ["main"]
+      title: "全搜结果页",
+      template: "./public/medusa.html",
+      filename: "medusa.html",
+      chunks: ["medusa"]
+    }),
+    new HtmlWebpackPlugin({
+      title: "全搜二级页",
+      template: "./public/zeus.html",
+      filename: "zeus.html",
+      chunks: ["zeus"]
     }),
     new VueLoaderPlugin()
   ]
