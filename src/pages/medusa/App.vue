@@ -1,7 +1,5 @@
 <template>
-  <div>
-    {{ title }}
-  </div>
+  <div class="gs-components-medusa-index">{{ title }}123</div>
 </template>
 
 <script>
@@ -13,8 +11,16 @@ export default {
       title: "medusa",
     };
   },
+  mounted() {
+    console.log(name);
+  },
 };
 </script>
 
-<style>
+<style scoped lang='scss'>
+$namespace: "gs-components-"; // 可配置的命名空间
+
+@include b(medusa-index) {
+  background: rgba(0, 0, 0, 0.3);
+}
 </style>

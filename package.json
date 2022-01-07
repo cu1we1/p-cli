@@ -14,8 +14,6 @@
     "@babel/preset-env": "^7.16.5",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
-    "compression-webpack-plugin": "^9.2.0",
-    "copy-webpack-plugin": "^10.2.0",
     "css-loader": "^6.5.1",
     "cssnano": "^5.0.14",
     "file-loader": "^6.2.0",
@@ -38,7 +36,10 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@cpc/lib-sass-bem": "^1.0.0",
+    "@heytap/badjs-sourcemap-uploader": "^1.4.4",
     "core-js": "^3.20.1",
+    "sass-resources-loader": "^2.2.4",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3"
   }

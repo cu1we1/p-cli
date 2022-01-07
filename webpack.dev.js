@@ -30,7 +30,17 @@ module.exports = merge(base, {
           { loader: "style-loader" },
           { loader: "css-loader" },
           { loader: "postcss-loader" },
-          { loader: "sass-loader" }
+          { loader: "sass-loader" },
+          {
+            loader: "sass-resources-loader",
+            options: {
+              sourceMap: true,
+              resources: path.resolve(
+                __dirname,
+                "node_modules/@cpc/lib-sass-bem/src/index.scss"
+              )
+            }
+          }
         ]
       }
     ]

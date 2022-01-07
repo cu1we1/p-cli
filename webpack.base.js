@@ -1,6 +1,6 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   resolve: {
@@ -12,11 +12,6 @@ module.exports = {
   entry: {
     medusa: "./src/pages/medusa/main.js",
     zeus: "./src/pages/zeus/main.js"
-  },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name]-[hash].bundle.js",
-    publicPath: ""
   },
   module: {
     rules: [
@@ -43,18 +38,18 @@ module.exports = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      title: "全搜结果页",
+      title: "结果页",
       template: "./public/medusa.html",
       filename: "medusa.html",
       chunks: ["medusa"]
     }),
     new HtmlWebpackPlugin({
-      title: "全搜二级页",
+      title: "二级页",
       template: "./public/zeus.html",
       filename: "zeus.html",
       chunks: ["zeus"]
-    }),
-    new VueLoaderPlugin()
+    })
   ]
 };
