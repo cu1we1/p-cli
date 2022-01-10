@@ -11,8 +11,7 @@ module.exports = merge(base, {
       path.resolve(__dirname, "public")
     ],
     host: "localhost",
-    port: 8080,
-    open: true
+    port: 8080
   },
   module: {
     rules: [

@@ -1,8 +1,10 @@
 {
-  "name": "p-cli",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "search-front",
+  "version": "10.16.0",
+  "proportion": "100",
+  "line": "1",
+  "private": true,
+  "debug": "0",
   "scripts": {
     "build": "webpack --config webpack.prod.js --color --progress",
     "serve": "webpack serve --config webpack.dev.js --color --progress --hot"
@@ -39,6 +41,7 @@
     "@cpc/lib-sass-bem": "^1.0.0",
     "@cpc/lib-search-jsapi": "^0.1.8",
     "@heytap/badjs-sourcemap-uploader": "^1.4.4",
+    "@heytap/oreport": "^1.1.2",
     "@oppo/colorui": "^2.0.22",
     "@oppo/colorui-icon": "^1.0.0-beta",
     "core-js": "^3.20.1",

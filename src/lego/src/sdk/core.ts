@@ -1,4 +1,4 @@
-import wv from "@cpc/lib-search-jsapi/dist/wv.esm";
+import wv from "./wv";
 export interface kvType {
   [k: string]: any;
 }
@@ -80,7 +80,7 @@ const getSyncInvokeData = (
 const getAsyncInvokeData = (
   callback: Function
 ): ((result: { code: number; data?: string }) => {}) => {
-  return function(result: { code: number; data?: string }) {
+  return function (result: { code: number; data?: string }) {
     if (!result) return "";
     const { code, data } = result;
     if (code === 0) {

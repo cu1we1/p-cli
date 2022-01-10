@@ -1,15 +1,6 @@
 import { browserInfo } from "../sdk/sync";
 
 let { O_URL, O_MEDUSA_URL, O_OUIS, O_CURL, urlCdn } = browserInfo;
-
-if (process && process.env.NODE_ENV === "development") {
-  O_URL = process.env.VUE_APP_O_URL;
-  O_MEDUSA_URL = process.env.VUE_APP_O_MEDUSA_URL;
-  O_OUIS = process.env.VUE_APP_OUIS;
-  O_CURL = process.env.VUE_APP_CURL;
-  urlCdn = process.env.VUE_APP_O_CDN;
-}
-
 // 结果页在线搜索接口。
 const MEDUSA_API = `${O_MEDUSA_URL}/search/global/new_medusa`;
 // 在线app二级页接口。
@@ -29,11 +20,10 @@ const APP_SEARCH_API = `${O_MEDUSA_URL}/search/global/app_search_index`;
 
 // 前端版本号，用于埋点上报使用。
 const FE_VERSION =
-  (process && process.env && process.env.VUE_APP_VERSION) || "0.0.0";
-
+  (process && process.env && process.env.APP_VERSION) || "0.0.0";
 // 是否展示开发用于debug的元素。
 const SHOW_DEV_ELEMENTS =
-  (process && process.env && process.env.VUE_APP_SHOW_DEV_ELEMENTS) || false;
+  (process && process.env && process.env.APP_SHOW_DEV_ELEMENTS) || false;
 
 // 用于localstorage保存的key
 const SUG_ONLINE_APPS = "sug_online_apps_list";

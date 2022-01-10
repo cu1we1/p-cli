@@ -536,13 +536,13 @@ $namespace: "medusa-"; // 可配置的命名空间
   height: 100vh;
   /* 五个tab的 */
   @include m(has-web) {
-    /deep/.color-tabs__header {
+    .color-tabs__header::deep {
       width: 304px;
     }
   }
   /* 三个tab */
   @include m(no-web) {
-    /deep/.color-tabs__header {
+    .color-tabs__header::deep {
       width: 248px;
     }
   }

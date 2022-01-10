@@ -118,13 +118,13 @@ $namespace: "zeus-local-album-";
   @include e(title) {
     padding: 5px 24px;
     margin: 10px 0;
-    /deep/.title {
+    .title::deep {
       color: rgba(0, 0, 0, 0.55);
       font-weight: 400;
       line-height: 21px;
       height: 21px;
     }
-    /deep/.multi_title_click_more {
+    .multi_title_click_more::deep {
       height: 24px;
     }
   }

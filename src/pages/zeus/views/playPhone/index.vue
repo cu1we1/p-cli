@@ -219,24 +219,24 @@ export default {
 .zeus-views-play-phone__net-work-error {
   height: 100vh;
 }
-/deep/.pic {
+.pic::deep {
   margin-left: 10px;
   height: 64px;
 }
-/deep/ .img-box {
+.img-box::deep {
   background-position: 50% 50%;
 }
-/deep/.color-loading
+.color-loading::deep
   .color-loading__progress.color-loading__progress--static
   path[stroke-linecap="butt"] {
   stroke: #2660f5;
 }
-/deep/.color-loading
+.color-loading::deep
   .color-loading__progress.color-loading__progress--static
   path[stroke-linecap="round"] {
   stroke: #84baf5;
 }
-/deep/.color-scroll__inner {
+.color-scroll__inner::deep {
   min-height: 500px;
 }
 </style>

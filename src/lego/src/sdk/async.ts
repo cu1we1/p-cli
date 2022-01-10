@@ -1,5 +1,5 @@
 // JSAPI异步接口
-import wv from "@cpc/lib-search-jsapi/dist/wv.esm";
+import wv from "./wv";
 import { isClientEvn, getAsyncInvokeData } from "./core";
 import { post } from "../fetch";
 

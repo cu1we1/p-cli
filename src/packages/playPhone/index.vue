@@ -191,10 +191,10 @@ export default {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-/deep/.pic {
+.pic::deep {
   margin-left: 4px;
 }
-/deep/.img-box {
+.img-box::deep {
   background-position: 50% 50%;
 }
 </style>

@@ -6,7 +6,7 @@ import { oreport, inject, browserInfo } from "@lego";
 import "./index.scss";
 
 Vue.config.productionTip = false;
-Vue.config.errorHandler = function(err, vm, info) {
+Vue.config.errorHandler = function (err, vm, info) {
   console.error(
     new Error(`views: ${vm.$route.fullPath}, "---" ${info}, "---" ${err}`)
   );

@@ -101,7 +101,7 @@ import {
   updateSugOnlineAppState,
   getSugOnlineAppState,
   getBrowserInfo,
-} from "../../../../lego/lib/index";
+} from "../../../../lego/src/index";
 import sugList from "./components/sugList/index.vue";
 import searchDirect from "./components/searchDirect/index.vue";
 import appSuggestion from "./components/appSuggestion";

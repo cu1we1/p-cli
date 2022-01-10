@@ -206,7 +206,7 @@ $namespace: "zeus-local-album-list-";
     }
   }
 }
-/deep/ .color-load-more-finished {
+.color-load-more-finished::deep {
   display: none;
 }
 </style>

@@ -13,11 +13,11 @@
   $clPicFill: themed("cli");
   $clBgFillS: themed("clbfs");
 
-  & {
-    background-color: transparent;
-  }
+  // & {
+  //   background-color: transparent;
+  // }
 
-  &.bg_fill {
+  .bg_fill {
     background-color: $clBodyFill;
   }
 

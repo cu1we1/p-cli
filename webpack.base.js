@@ -1,6 +1,15 @@
 const path = require("path");
+const fs = require("fs");
 const { VueLoaderPlugin } = require("vue-loader");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+
+const json = fs.readFileSync(path.resolve(__dirname, "package.json"), "utf-8");
+const { version, proportion, line, debug } = JSON.parse(json);
+const env = {
+  APP_VERSION: `${version}_${proportion}_${line}`,
+  APP_SHOW_DEV_ELEMENTS: debug === "1"
+};
 
 module.exports = {
   resolve: {
@@ -28,7 +37,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
-        use: [{ loader: "file-loader" }]
+        use: [
+          {
+            loader: "file-loader"
+          }
+        ]
       },
       {
         test: /\.vue$/,
@@ -55,6 +68,9 @@ module.exports = {
       template: "./public/zeus.html",
       filename: "zeus.html",
       chunks: ["zeus"]
+    }),
+    new webpack.DefinePlugin({
+      process: JSON.stringify({ env })
     })
   ]
 };

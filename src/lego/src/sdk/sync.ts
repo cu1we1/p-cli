@@ -1,4 +1,4 @@
-import wv from "@cpc/lib-search-jsapi/dist/wv.esm";
+import wv from "./wv";
 import { getUrlSingleParam } from "../utils/queryString";
 
 import {
