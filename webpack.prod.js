@@ -6,14 +6,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const base = require("./webpack.base");
-const fs = require("fs");
-
-const json = fs.readFileSync(path.resolve(__dirname, "package.json"), "utf-8");
-const { version, proportion, line } = JSON.parse(json);
-process.env.VUE_APP_VERSION = `${version}_${proportion}_${line}`;
-
-// 是否展示开发dom元素。（打预发包需要注释掉）
-// process.env.VUE_APP_SHOW_DEV_ELEMENTS = "1";
 
 const myOptimization = {
   runtimeChunk: "single",
@@ -121,7 +113,7 @@ module.exports = merge(base, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/[name].css"
+      filename: "css/[name]-[hash].css"
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: "disabled"
@@ -130,13 +122,34 @@ module.exports = merge(base, {
       title: "结果页",
       template: "./public/medusa.html",
       filename: "medusa.html",
-      chunks: ["medusa"]
+      chunks: [
+        "chunk-vendors",
+        "chunk-common",
+        "chunk-vue",
+        "chunk-color-ui",
+        "chunk-packages-sort",
+        "chunk-vendors-common",
+        "chunk-src-common",
+        "medusa",
+        "runtime"
+      ]
     }),
     new HtmlWebpackPlugin({
       title: "二级页",
       template: "./public/zeus.html",
       filename: "zeus.html",
-      chunks: ["zeus"]
+      chunks: [
+        "chunk-vendors",
+        "chunk-common",
+        "chunk-vue",
+        "chunk-vue-router",
+        "chunk-color-ui",
+        "chunk-vendors-common",
+        "chunk-src-common",
+        "zeus",
+        "runtime"
+      ]
     })
-  ]
+  ],
+  optimization: myOptimization
 });
