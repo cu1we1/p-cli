@@ -15,17 +15,12 @@ module.exports = {
   resolve: {
     extensions: [".js", ".ts", ".vue"],
     alias: {
-      "@": path.resolve(__dirname, "src"),
-      src: path.resolve(__dirname, "src"),
-      "@gs": path.resolve(__dirname, "src/packages"),
-      "@lego": path.resolve(__dirname, "src/lego/src"),
-      "@components": path.resolve(__dirname, "src/components"),
-      "@img": path.resolve(__dirname, "src/img")
+      src: path.resolve(__dirname, "src")
     }
   },
   entry: {
-    medusa: "./src/pages/medusa/main.js",
-    zeus: "./src/pages/zeus/main.js"
+    medusa: "./src/medusa/main.js",
+    zeus: "./src/zeus/main.js"
   },
   module: {
     rules: [
